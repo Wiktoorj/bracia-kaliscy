@@ -55,7 +55,6 @@ header div.logo {
 
 header div img {
     order: -1;
-
 }
 
 header .owners {
@@ -87,3 +86,114 @@ header .names {
     margin-top: 10%;
 }
 
+@media (min-width:375px) {
+    header .owners {
+        font-size: 42px;
+    }
+
+    header .names {
+        margin-left: 90px;
+    }
+}
+
+main {}
+
+section.target,
+section.typeOfWork,
+section.price,
+section.wayToContact,
+section.faq,
+section.contact {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+}
+
+section.target {
+    background-color: black;
+    padding-bottom: 15vh;
+    background: linear-gradient(180deg, black 0%, black 90%, white 100%)
+}
+
+.target h1 {
+    font-size: 32px;
+    color: rgb(114, 8, 8);
+    text-align: center;
+    margin: 5vh 0;
+}
+
+.target ul {
+    list-style: none;
+}
+
+.target li {
+    margin-bottom: 5vh;
+    display: flex;
+}
+
+.target p {
+    color: rgb(77, 54, 54);
+}
+
+.target i {
+    margin-right: 15px;
+    color: rgb(114, 8, 8);
+}
+
+section.partners {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5% 5vh;
+    min-height: 90vh;
+    background: linear-gradient(180deg, white 0%, white 90%, black 100%);
+    padding-bottom: 7vh
+}
+
+.partners h2 {
+    margin-bottom: 6vh;
+    text-align: center;
+    font-size: 32px;
+    padding: 0 0 5vh;
+}
+
+.partners img {
+    display: block;
+    width: 90%;
+}
+
+.partners i {
+    display: none;
+}
+
+section.typeOfWork {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10vh 5vh; 
+}
+
+section.price
+{
+    text-align: center;
+}
+section.wayToContact,
+section.faq,
+section.contact {}
+
+footer {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    background-color: black;
+}
+
+footer p {
+    margin-top: 10px
+}
