@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Signika:wght@400;700&display=swap');
+/* font-family: 'EB Garamond', serif; */
+/* font-family: 'Signika', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fontSizeH1: 20px;
+    --fontSizeH2: 118px;
+    --fontSizeH3: 16px;
+    --fontSizeP: 14px;
+}
+
+body {
+    /* font-family: 'EB Garamond', serif; */
+    font-family: 'Signika', sans-serif;
+}
+
+.burger {
+    display: none;
+    font-size: var(--fontSizeH1);
+}
+
+
+header {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    text-shadow: 0 0 3px rgb(114, 8, 8);
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+header div.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+}
+
+
+header div img {
+    order: -1;
+
+}
+
+header .owners {
+    text-transform: uppercase;
+}
+
+header .owners span {
+    text-decoration: overline
+}
+
+header div.motto {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    padding: 5%;
+}
+
+header h2 {
+    font-size: 20px;
+    color: rgb(114, 8, 8);
+    text-shadow: 0 0 3px black;
+}
+
+header .names {
+    font-size: 26px;
+    margin-top: 10%;
+}
+
