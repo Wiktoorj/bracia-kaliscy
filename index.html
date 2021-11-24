@@ -3,7 +3,8 @@
 
 <head>
     <!-- czas pisania:
-    html: 3h min -->
+    html + pobieranie zasobów w tym edycja obrazków: 4h  
+css: 1h + 6.5h-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
@@ -26,12 +27,14 @@
 </head>
 
 <body>
-    <aside class="burger">
-        <i class="fas fa-bars"></i>
-        <nav>
+    <aside>
+        <div class="burger">
+            <i class="fas fa-bars burgerFas"></i>
+            <i class="fas fa-angle-up burgerFas off"></i></div>
+        <nav class="off">
             <ul>
                 <li><a href="#header"><i class="fas fa-home"></i>Strona Główna</a></li>
-                <li><a href="#offert"><i class="fab fa-black-tie"></i>Oferta</a></li>
+                <li><a href="#offer"><i class="fab fa-black-tie"></i>Oferta</a></li>
                 <li><a href="#realizations"><i class="fas fa-award"></i>Nasze Realizacje</a></li>
                 <li><a href="#contact"><i class="far fa-address-card"></i>Kontakt</a></li>
             </ul>
@@ -39,18 +42,15 @@
     </aside>
 
     <div class="wrapper">
-        <header>
+        <header id="header">
             <video src="img/video.mp4" autoplay loop playsinline muted></video>
             <div class="logo">
                 <h1 class="owners"><span>Bracia</span> Kaliscy</h1>
                 <img src="img/HEADERlogo.png" alt="">
             </div>
             <div class="motto">
-                <h2>" Za każdym razem staramy się stworzyć taki film który pozwoli wam osiągnąć wasze cele. Bo wasz
-                    sukces
-                    jest też naszym sukcesem. "</h2>
-
-                <h1 class="names">- PAWEŁ & WOJTEK -</h1>
+                <h2></h2>
+                <h1 class="names"></h1>
             </div>
 
             <!-- <img src="img/headerSMALL.jpg" alt="owners"> -->
@@ -89,7 +89,6 @@
                             film</p>
                     </li>
                 </ul>
-
                 <img src="img/headerSMALL.jpg" alt="">
             </section>
 
@@ -100,14 +99,13 @@
                 <img src="img/partnersSmall/partner0.png" alt="">
             </section>
 
-            <section class="typeOfWork">
+            <section id='offer' class="typeOfWork">
                 <h1>Tworzymy między innymi filmy takie jak:</h1>
                 <article>
                     <h2>Promocyjno reklamowe</h2>
                     <iframe src="https://www.youtube.com/embed/yyKAaZofBY8" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-
                     <p>Ich zadaniem jest zachęcenie klienta do dokonania zakupu danego produktu lub korzystania z
                         określonych usług oraz wykreowanie świadomości marki na rynku.</p>
                     <a href="#realizacje"><span>więcej</span></a>
@@ -174,15 +172,22 @@
                 <aside class="callUs">
                     <h3><i class="fas fa-phone-alt"></i> ZADZWOŃ DO NAS! </h3>
                     <p class="pawel"><i class="fas fa-mobile-alt"></i>Paweł
-                        <a href="tel:+48733591022">+48 733 591 022</a></p>
+                        <a href="tel:+48733591022"><i class="fas fa-angle-double-right"></i>+48 733 591 022<i class="fas fa-angle-double-left"></i></a>
+                    </p>
                     <p class="wojtek"> <i
-                            class="fas fa-mobile-alt"></i>Wojtek<a href="tel:+48733939515">+48 733 939 515</a></p>
+                            class="fas fa-mobile-alt"></i>Wojtek<a href="tel:+48733939515"><i class="fas fa-angle-double-right"></i>+48 733 939 515<i class="fas fa-angle-double-left"></i></a>
+                    </p>
                     <h3><i class="fas fa-at"></i>NAPISZ E-MAILA</h3>
-                    <p class="mail"><a href="mailto:bracia.kaliscy@gmail.com">bracia.kaliscy@gmail.com</a></p>
+                    <p class="mail">
+                        <a href="mailto:bracia.kaliscy@gmail.com"><i class="fas fa-angle-double-right"></i>bracia.kaliscy@gmail.com<i class="fas fa-angle-double-left"></i></a>
+                    </p>
                 </aside>
             </section>
 
-            <section class="faq">
+            <section class="bgc3">
+            </section>
+
+            <section id='realizations' class="faq">
                 <h1>Najczęściej zadawane pytania:</h1>
                 <h3>Jak wyglądają nagrania?</h3>
                 <p>Zawsze staramy się pokazać daną lokację z jak najlepszej strony - wiąże się to z wyborem odpowiedniej
@@ -201,17 +206,24 @@
                 <p>Tak - wystawiamy faktury bez vat.</p>
             </section>
 
-            <section class="contact">
+            <section class="bgc4">
+            </section>
+
+            <section id='contact' class="contact">
                 <h1>Skontaktuj się z nami:</h1>
-                <h2><i class="fas fa-map-marker"></i>Bracia Kaliscy</h2>
-                <p>Moniuszki 6/1, 69-200 Sulęcin</p>
+                <div class="adres">
 
-                <h2><i class="fas fa-phone"></i>+48 733 591 022</h2>
-                <h2>+48 733 939 515</h2>
+                    <h2>Bracia Kaliscy</h2>
+                    <p>Moniuszki 6/1</p>
+                    <p>69-200 Sulęcin</p>
+                </div>
+                <div class="telefony">
+                    <a href="tel:+48733591022"><i class="fas fa-angle-double-right"></i>+48 733 591 022<i class="fas fa-angle-double-left"></i></a><a href="tel:+48733939515"><i class="fas fa-angle-double-right"></i>+48 733 939 515<i class="fas fa-angle-double-left"></i></a>
+                </div>
+                <a class='mail2' href="mailto:bracia.kaliscy@gmail.com"><i class="fas fa-angle-double-right"></i>bracia.kaliscy@gmail.com<i class="fas fa-angle-double-left"></i></a>
 
-                <h2><i class="far fa-envelope"></i>bracia.kaliscy@gmail.com</h2>
 
-                <a href="https://www.facebook.com/BraciaKaliscyFilmySlubne"><i class="fab fa-facebook-square"></i>Bracia Kaliscy - Produkcja Filmowa i Fotografia</a>
+                <a class="fb2" href="https://www.facebook.com/BraciaKaliscyFilmySlubne"> <i class="fas fa-angle-double-right"></i><i class="fab fa-facebook-square"></i>FACEBOOK<i class="fas fa-angle-double-left"></i></a>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2432.4472059529844!2d15.105996415275266!3d52.43481325029196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4707001ba0f1eb85%3A0x91f2d0cfb46c24c2!2sMoniuszki%206%2C%2069-200%20Sul%C4%99cin%2C%20Polska!5e0!3m2!1spl!2sde!4v1637691071623!5m2!1spl!2sde"
                     width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -219,7 +231,7 @@
         </main>
 
         <footer>
-            <p>&copy; Bracia Kaliscy 2021 </p>
+            <p>&copy; Bracia Kaliscy 2021</p>
             <p>Filmy Ślubne Pełne Emocji</p>
         </footer>
     </div>

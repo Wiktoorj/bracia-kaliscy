@@ -9,7 +9,7 @@
 }
 
 :root {
-    --fontSizeH1: 20px;
+    --fontSizeH1: 23px;
     --fontSizeH2: 118px;
     --fontSizeH3: 16px;
     --fontSizeP: 14px;
@@ -20,13 +20,94 @@ body {
     font-family: 'Signika', sans-serif;
     max-width: 100%;
     overflow-x: hidden;
+    transition: 1s;
 }
 
 .burger {
-    display: none;
-    font-size: var(--fontSizeH1);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: rgb(173, 8, 8);
+    text-shadow: 0 0 3px black;
+    z-index: 10;
+    font-size: 30px;
+    cursor: pointer;
+    transition: .5s;
 }
 
+.burger:hover {
+    color: white;
+    transform: scale(1.5);
+}
+
+i.off {
+    display: none;
+}
+
+i.fa-angle-up {
+    font-size: 50px;
+    color: white;
+    z-index: 3;
+}
+
+i.fa-angle-up:hover {
+    color: rgb(173, 8, 8)
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    background-color: #000;
+    transition: .4s;
+    z-index: 9;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding-right: 80px;
+}
+
+nav ul li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 4vh 0;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 30px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(173, 8, 8);
+    transition: .3s;
+}
+
+nav ul li a:hover {
+    color: rgb(173, 8, 8);
+    transform: scale(1.1)
+}
+
+nav ul li a i {
+    margin-right: 20px;
+}
+
+nav.off {
+    top: -100vh;
+}
 
 header {
     height: 100vh;
@@ -34,7 +115,6 @@ header {
     position: relative;
     border-left: 1px solid white;
     border-right: 1px solid white;
-
 }
 
 header video {
@@ -104,11 +184,9 @@ header .names {
     }
 
     header .names {
-        margin-left: 90px;
+        margin-left: 50px;
     }
 }
-
-main {}
 
 section.target,
 section.typeOfWork,
@@ -133,8 +211,8 @@ section.target {
 
 .target h1 {
     margin: 5vh 0;
-    font-size: 28px;
-    color: rgb(114, 8, 8);
+    font-size: var(--fontSizeH1);
+    color: white;
     text-align: center;
     text-transform: uppercase;
 }
@@ -208,6 +286,7 @@ section.typeOfWork {
     color: white;
     width: 80%;
     border-top: 2px solid rgb(114, 8, 8);
+    font-size: var(--fontSizeH1);
 }
 
 
@@ -233,7 +312,7 @@ section.typeOfWork {
 
 .typeOfWork article p {
     margin: 5vh 0 10vh;
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
 }
 
@@ -248,7 +327,7 @@ section.typeOfWork {
     background-color: rgba(255, 255, 255, .6);
     color: black;
     position: absolute;
-    transform: translate(-50%, -50%) skew(-45deg);
+    transform: translate(-50%, -50%);
     transition: 2s;
     animation-name: buttonA;
     animation-duration: 5s;
@@ -258,53 +337,48 @@ section.typeOfWork {
 
 @keyframes buttonA {
     0% {
-        transform: translate(-50%, -50%) skew(-45deg);
+        transform: translate(-50%, -50%);
     }
 
     41% {
-        transform: translate(-50%, -50%) skew(-45deg);
+        transform: translate(-50%, -50%);
     }
 
     42% {
-        transform: translate(-40%, -50%) skew(-45deg);
+        transform: translate(-40%, -50%);
     }
 
     43% {
-        transform: translate(-60%, -50%) skew(-45deg);
+        transform: translate(-60%, -50%);
     }
 
     44% {
-        transform: translate(-40%, -50%) skew(-45deg);
+        transform: translate(-40%, -50%);
     }
 
     45% {
-        transform: translate(-60%, -50%) skew(-45deg);
+        transform: translate(-60%, -50%);
     }
 
     46% {
-        transform: translate(-40%, -50%) skew(-45deg);
+        transform: translate(-40%, -50%);
     }
 
     47% {
-        transform: translate(-60%, -50%) skew(-45deg);
+        transform: translate(-60%, -50%);
     }
 
     48% {
-        transform: translate(-40%, -50%) skew(-45deg);
+        transform: translate(-40%, -50%);
     }
 
     49% {
-        transform: translate(-50%, -50%) skew(-45deg);
+        transform: translate(-50%, -50%);
     }
 
     100% {
-        transform: translate(-50%, -50%) skew(-45deg);
+        transform: translate(-50%, -50%);
     }
-}
-
-.typeOfWork article a span {
-    display: block;
-    transform: skew(45deg);
 }
 
 .typeOfWork article a::after {
@@ -338,7 +412,9 @@ section.typeOfWork {
 }
 
 section.bgc1,
-section.bgc2 {
+section.bgc2,
+section.bgc3,
+section.bgc4 {
     height: 70vh;
     background-repeat: no-repeat;
     background-position: center;
@@ -355,19 +431,21 @@ section.price {
     min-height: 180vh;
     background-color: black;
     color: white;
-    padding: 5vh 5%;
+    padding: 3vh 5%;
     border-bottom: 2px solid white;
     border-left: 2px solid white;
     border-right: 2px solid white;
     box-shadow: 0 0 0 2px white, 0 0 0 6px black;
     border-radius: 10px;
+
 }
 
 .price h1 {
     text-transform: uppercase;
-    margin: 10vh 0 5vh;
+    margin: 3vh 0 3vh;
     padding-bottom: 5vh;
-    border-bottom: 2px solid white
+    border-bottom: 2px solid white;
+    font-size: var(--fontSizeH1);
 }
 
 .price p {
@@ -385,16 +463,16 @@ section.bgc2 {
     background-image: url(../img/bgc1.jpg);
 }
 
-
 section.wayToContact {
     background-color: black;
     border: 2px solid white;
     border-radius: 10px;
-    color: white
+    color: white;
+    padding-top: 5vh;
 }
 
 .wayToContact h1 {
-    font-size: 32px;
+    font-size: 28px;
     border-bottom: 2px solid white;
     padding-bottom: 5vh;
     text-transform: uppercase;
@@ -406,6 +484,7 @@ section.wayToContact {
 }
 
 .wayToContact p {
+    font-size: 19px;
     text-align: center;
 }
 
@@ -418,35 +497,30 @@ section.wayToContact {
     color: black;
     border-radius: 10px;
     box-shadow: 0 0 0 2px black, 0 0 0 4px rgb(173, 8, 8);
-
 }
 
 .wayToContact h3 {
-    padding: 3vh 0;
-    font-size: 23px;
+    padding: 3vh 0 0;
+    font-size: var(--fontSizeH1);
 }
 
 .wayToContact i {
     margin-right: 10px;
+    margin-left: 10px;
 }
 
 .wayToContact .fa-at {
     margin-right: 15px;
 }
 
-
-
 .wayToContact p {
     margin: 3vh 0;
-    font-size: 24px;
-
+    font-size: 20px;
 }
 
 .wayToContact .pawel {
-    border-top: 2px dashed black;
-    /* border-bottom: 2px dashed black; */
-    padding-bottom: 3vh;
     padding-top: 3vh;
+    padding-bottom: 3vh;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -463,27 +537,135 @@ section.wayToContact {
     color: white;
     cursor: pointer;
     display: block;
-    margin-top: 3vh;
+    margin-top: 4vh;
 }
 
 .wayToContact .mail {
-    border-top: 2px dashed black;
-    font-size: 22px;
+    font-size: 16px;
 }
 
-section.faq,
-section.contact {}
+section.bgc3 {
+    background-image: url(../img/bgc3.jpg);
+}
+
+section.faq {
+    min-height: 150vh;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 0 0 6px black, 0 0 0 8px white;
+    padding-bottom: 10vh;
+}
+
+.faq h1 {
+    font-size: var(--fontSizeH1);
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 3vh;
+    border-bottom: 2px solid white;
+}
+
+.faq h3 {
+    padding-top: 5vh;
+    padding-bottom: 3vh;
+    border-bottom: 2px solid rgb(173, 8, 8);
+    color: rgb(173, 8, 8);
+    font-size: 22px
+}
+
+.faq p {
+    padding-top: 3vh;
+}
+
+section.bgc4 {
+    background-image: url(../img/bgc.jpg);
+    background-position: left 45%
+}
+
+section.contact {
+    min-height: 150vh;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-bottom: none;
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: var(--fontSizeH1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+}
+
+.contact .adres,
+.contact .telefony {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact div h2 {
+    padding-top: 5vh;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(173, 8, 8);
+    padding-bottom: 3vh;
+}
+
+.contact p {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.contact a {
+    padding-top: 5vh;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(173, 8, 8);
+    font-size: 26px;
+    padding-bottom: 3vh;
+}
+
+.contact .mail2 {
+    color: white;
+    font-size: 18px
+}
+
+.contact i {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: rgb(13, 131, 241)
+}
+
+.contact .fb2 {
+    color: rgb(13, 131, 241)
+}
+
+.contact iframe {
+    display: block;
+    width: 100%;
+    margin: 5vh auto;
+}
 
 footer {
-    height: 15vh;
+    min-height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: whitesmoke;
+    color: white;
     background-color: black;
+    border-top: 2px dashed white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    padding-bottom: 5vh
 }
 
 footer p {
-    margin-top: 10px
+    text-transform: uppercase;
+    margin-top: 10px;
 }
