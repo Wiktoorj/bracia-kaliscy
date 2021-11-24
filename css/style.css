@@ -18,6 +18,8 @@
 body {
     /* font-family: 'EB Garamond', serif; */
     font-family: 'Signika', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .burger {
@@ -30,7 +32,9 @@ header {
     height: 100vh;
     overflow: hidden;
     position: relative;
-    text-shadow: 0 0 3px rgb(114, 8, 8);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+
 }
 
 header video {
@@ -45,13 +49,12 @@ header video {
 header div.logo {
     display: flex;
     align-items: center;
-    padding-left: 10%;
     position: absolute;
     top: 10%;
-    left: 0;
+    left: 9%;
     width: 100%;
+    text-shadow: 0 0 4px white;
 }
-
 
 header div img {
     order: -1;
@@ -59,6 +62,7 @@ header div img {
 
 header .owners {
     text-transform: uppercase;
+    font-size: 39px
 }
 
 header .owners span {
@@ -68,22 +72,30 @@ header .owners span {
 header div.motto {
     position: absolute;
     top: 50%;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
     text-align: center;
     z-index: 1;
     padding: 5%;
+    color: white;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    border: 1px solid white;
+
 }
 
 header h2 {
-    font-size: 20px;
-    color: rgb(114, 8, 8);
-    text-shadow: 0 0 3px black;
+    font-size: 18px;
+    font-weight: normal;
+    text-shadow: none;
 }
 
 header .names {
-    font-size: 26px;
+    font-size: 22px;
     margin-top: 10%;
+    font-weight: normal;
+
 }
 
 @media (min-width:375px) {
@@ -112,20 +124,25 @@ section.contact {
 }
 
 section.target {
-    background-color: black;
     padding-bottom: 15vh;
-    background: linear-gradient(180deg, black 0%, black 90%, white 100%)
+    background-color: black;
+    border-left: 2px solid rgb(114, 8, 8);
+    border-right: 2px solid rgb(114, 8, 8);
+    background: linear-gradient(180deg, black 0%, black 91%, white 100%)
 }
 
 .target h1 {
-    font-size: 32px;
+    margin: 5vh 0;
+    font-size: 28px;
     color: rgb(114, 8, 8);
     text-align: center;
-    margin: 5vh 0;
+    text-transform: uppercase;
 }
 
 .target ul {
+    border-top: 2px solid rgb(114, 8, 8);
     list-style: none;
+    padding-top: 5vh;
 }
 
 .target li {
@@ -134,7 +151,7 @@ section.target {
 }
 
 .target p {
-    color: rgb(77, 54, 54);
+    color: rgb(224, 217, 217)
 }
 
 .target i {
@@ -147,22 +164,29 @@ section.partners {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 5% 5vh;
+    padding: 0 0 5vh;
     min-height: 90vh;
     background: linear-gradient(180deg, white 0%, white 90%, black 100%);
-    padding-bottom: 7vh
+    padding-bottom: 7vh;
+    border-left: 2px solid rgb(114, 8, 8);
+    border-right: 2px solid rgb(114, 8, 8);
 }
 
 .partners h2 {
-    margin-bottom: 6vh;
     text-align: center;
     font-size: 32px;
-    padding: 0 0 5vh;
+    padding: 5vh 0;
+    margin: 0 0 5vh;
+    text-decoration: overline;
+    letter-spacing: 2px;
+
 }
 
 .partners img {
     display: block;
     width: 90%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .partners i {
@@ -171,16 +195,282 @@ section.partners {
 
 section.typeOfWork {
     background-color: black;
-    color: white;
     text-align: center;
-    padding: 10vh 5vh; 
+    padding: 10vh 0 0vh;
+    border: 2px solid rgb(114, 8, 8);
+    border-top: none
 }
 
-section.price
-{
+.typeOfWork h1 {
+    margin: 0 auto;
+    padding: 5vh 5% 5vh;
+    text-transform: uppercase;
+    color: white;
+    width: 80%;
+    border-top: 2px solid rgb(114, 8, 8);
+}
+
+
+.typeOfWork article {
+    background: linear-gradient(125deg, rgb(173, 8, 8) 0%, rgb(199, 3, 3) 100%);
+    padding: 5vh 5% 10vh;
+    width: 90%;
+    margin: 0 auto 10vh;
+    border-radius: 10px;
+}
+
+.typeOfWork h2 {
+    margin-bottom: 5vh;
+    letter-spacing: 2px;
+    font-size: 25px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.typeOfWork iframe {
+    border: 2px solid black;
+}
+
+.typeOfWork article p {
+    margin: 5vh 0 10vh;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.typeOfWork article a {
+    padding: 7px 20px;
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 19px;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, .6);
+    color: black;
+    position: absolute;
+    transform: translate(-50%, -50%) skew(-45deg);
+    transition: 2s;
+    animation-name: buttonA;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+}
+
+@keyframes buttonA {
+    0% {
+        transform: translate(-50%, -50%) skew(-45deg);
+    }
+
+    41% {
+        transform: translate(-50%, -50%) skew(-45deg);
+    }
+
+    42% {
+        transform: translate(-40%, -50%) skew(-45deg);
+    }
+
+    43% {
+        transform: translate(-60%, -50%) skew(-45deg);
+    }
+
+    44% {
+        transform: translate(-40%, -50%) skew(-45deg);
+    }
+
+    45% {
+        transform: translate(-60%, -50%) skew(-45deg);
+    }
+
+    46% {
+        transform: translate(-40%, -50%) skew(-45deg);
+    }
+
+    47% {
+        transform: translate(-60%, -50%) skew(-45deg);
+    }
+
+    48% {
+        transform: translate(-40%, -50%) skew(-45deg);
+    }
+
+    49% {
+        transform: translate(-50%, -50%) skew(-45deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) skew(-45deg);
+    }
+}
+
+.typeOfWork article a span {
+    display: block;
+    transform: skew(45deg);
+}
+
+.typeOfWork article a::after {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: black;
+    transition: .3s linear;
+}
+
+.typeOfWork article a:hover::after {
+    left: 100%;
+}
+
+.typeOfWork article a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: black;
+    transition: .3s .4s linear;
+}
+
+.typeOfWork article a:hover::before {
+    bottom: 100%;
+}
+
+section.bgc1,
+section.bgc2 {
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section.bgc1 {
+    background-image: url(../img/bg2.jpg)
+}
+
+section.price {
+    text-align: center;
+    min-height: 180vh;
+    background-color: black;
+    color: white;
+    padding: 5vh 5%;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    box-shadow: 0 0 0 2px white, 0 0 0 6px black;
+    border-radius: 10px;
+}
+
+.price h1 {
+    text-transform: uppercase;
+    margin: 10vh 0 5vh;
+    padding-bottom: 5vh;
+    border-bottom: 2px solid white
+}
+
+.price p {
+    font-size: 16px;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+    border-bottom: 1px dashed white;
+}
+
+.price p:last-of-type {
+    border: none;
+}
+
+section.bgc2 {
+    background-image: url(../img/bgc1.jpg);
+}
+
+
+section.wayToContact {
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white
+}
+
+.wayToContact h1 {
+    font-size: 32px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5vh;
+    text-transform: uppercase;
+}
+
+.wayToContact h2 {
+    letter-spacing: 2px;
+    padding-bottom: 5vh;
+}
+
+.wayToContact p {
     text-align: center;
 }
-section.wayToContact,
+
+.wayToContact .callUs {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(125deg, rgb(173, 8, 8) 0%, rgb(199, 3, 3) 100%);
+    padding: 20px 5%;
+    margin: 5vh 0;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px black, 0 0 0 4px rgb(173, 8, 8);
+
+}
+
+.wayToContact h3 {
+    padding: 3vh 0;
+    font-size: 23px;
+}
+
+.wayToContact i {
+    margin-right: 10px;
+}
+
+.wayToContact .fa-at {
+    margin-right: 15px;
+}
+
+
+
+.wayToContact p {
+    margin: 3vh 0;
+    font-size: 24px;
+
+}
+
+.wayToContact .pawel {
+    border-top: 2px dashed black;
+    /* border-bottom: 2px dashed black; */
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.wayToContact .wojtek {
+    border-bottom: 2px solid black;
+    padding-bottom: 3vh;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.wayToContact a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-top: 3vh;
+}
+
+.wayToContact .mail {
+    border-top: 2px dashed black;
+    font-size: 22px;
+}
+
 section.faq,
 section.contact {}
 
