@@ -2,9 +2,10 @@
 const burgerIcons = document.querySelectorAll('.burgerFas');
 const burgerNavi = document.querySelectorAll('nav ul li a');
 
-const burger = function (e) {
+const burger = function () {
     document.querySelector('nav').classList.toggle('off');
     for (ico of burgerIcons) ico.classList.toggle('off');
+    document.querySelector('.burger').classList.toggle('off');
 }
 
 for (ico of burgerIcons) ico.addEventListener('click', burger);
@@ -35,7 +36,7 @@ let maszynaQuote = setInterval(writeQuote, 20)
 
 //reklama firm [slider]
 const partnersSlideTime = 2000;
-
+const divs = document.querySelectorAll('.dots div')
 const img = document.querySelector('.partners img')
 let partnerNumber = 0;
 
