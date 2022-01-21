@@ -87,8 +87,8 @@ i.off {
 }
 
 i.fa-angle-up {
-    font-size: 80px;
-    color: red;
+    font-size: 40px;
+    color: white;
 }
 
 nav {
@@ -99,14 +99,15 @@ nav {
     height: 100vh;
     transition: .2s ease-out;
     z-index: 9;
-    background-image: url(../img/nav.png);
+    /* background-image: url(../img/nav.png); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background: linear-gradient(90deg, rgb(133, 123, 123) 0%, #b1b9b9 100%); */
+    background: radial-gradient(rgb(133, 123, 123) 0%, #b1b9b9 100%);
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
+    overflow: hidden;
 
 }
 
@@ -123,44 +124,73 @@ nav ul::before {
     content: '';
     display: block;
     width: 96%;
-    height: 4px;
-    background-color: rgb(255, 5, 5);
+    height: 1px;
+    background-color:white;
     position: absolute;
     top: 10%;
-    left: 4%;
+    left: 100%;
+    animation: ulBeforeTop 2s infinite;
+}
+
+@keyframes ulBeforeTop {
+     100% {
+        left: 4%;
+    }
 }
 
 nav ul::after {
     content: '';
     display: block;
-    width: 4px;
+    width: 1px;
     height: 85%;
-    background-color: rgb(255, 72, 0);
+    background-color: white;
     position: absolute;
-    top: 0;
+    top: -100%;
     left: 4%;
+    animation: ulAfterBotLeft 2s infinite;
 }
+
+@keyframes ulAfterBotLeft {
+     100% {
+        top: 0;
+    }
+}
+
 
 nav::before {
     content: '';
     display: block;
     width: 96%;
-    height: 4px;
-    background-color: rgb(255, 5, 5);
+    height: 1px;
+    background-color:white;
     position: absolute;
     bottom: 15%;
-    left: 0;
+    left: -100%;
+    animation: ulBeforeBot 2s infinite;
+}
+
+@keyframes ulBeforeBot {
+     100% {
+        left: 0;
+    }
 }
 
 nav::after {
     content: '';
     display: block;
-    width: 4px;
+    width: 1px;
     height: 90%;
-    background-color: rgb(255, 72, 0);
+    background-color: white;
     position: absolute;
-    top: 10%;
+    top: 100%;
     right: 4%;
+    animation: ulAfterBotRight 2s infinite;
+}
+
+@keyframes ulAfterBotRight {
+     100% {
+        top: 10%;
+    }
 }
 
 
@@ -178,19 +208,19 @@ nav ul li a {
     margin: 0 auto;
     border-radius: 10px;
     /* background: linear-gradient(180deg, rgb(10, 236, 67) 0%, #5fc004 100%); */
-    background: linear-gradient(180deg, rgb(255, 5, 5) 0%, rgb(255, 72, 0)100%);
+    /* background: linear-gradient(180deg, rgb(255, 5, 5) 0%, rgb(255, 72, 0)100%); */
     display: block;
     padding: 1vh 0;
     text-align: center;
     text-decoration: none;
     /* color: rgb(34, 29, 29 ); */
-    color: black;
+    color: white;
     text-transform: uppercase;
     font-size: 22px;
     cursor: pointer;
     transition: 1s;
     z-index: 15;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 @keyframes navA {
@@ -204,8 +234,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: white;
-    border: 1px solid white;
+    color: red;
+    border: 1px solid red;
+background-color: black;
 }
 
 nav ul li a i {
@@ -262,16 +293,6 @@ header .names {
     font-weight: normal;
 }
 
-@media (min-width:375px) {
-    header .owners {
-        font-size: 42px;
-    }
-
-    header .names {
-        margin-left: 50px;
-    }
-}
-
 section.target,
 section.typeOfWork,
 section.price,
@@ -285,19 +306,22 @@ section.contact {
     padding: 5%;
 }
 
+
 section.target {
     padding: 15% 5% 5% 5%;
     padding-bottom: 20vh;
-    background: linear-gradient(180deg, black 0%, black 91%, white 100%);
+    background: linear-gradient(180deg, black 0%, black 93%, white 100%);
+    overflow: hidden;
+    
 }
 
 .target h1 {
     margin: 5vh 0;
     font-size: var(--fontSizeH1);
-    color: rgb(131, 8, 8);
+    color: #fa0000;
     text-align: center;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #a09e9e 0%, #4d4d48 100%);
+    /* background: linear-gradient(135deg, #a09e9e 0%, #4d4d48 100%); */
     border-radius: 10px;
     padding: 2vh
 }
@@ -307,15 +331,31 @@ section.target {
     list-style: none;
     padding-top: 5vh;
 }
+.art1, .art3, .art5 {
+    transform: translateX(-100vw);
+    transition: .4s ease-in;
+}
 
+.art2, .art4 {
+    transform: translateX(100vw);
+    transition: .4s ease-in;
+}
+
+.art1.active, .art2.active, .art3.active, .art4.active, .art5.active {
+    transform: translateX(0);
+}
 .target li {
-    background: linear-gradient(135deg, #a09e9e 0%, #4d4d48 100%);
+    
+    background: radial-gradient(rgb(128, 125, 125) 0%, #2a2b2b 100%);
     /* background: linear-gradient(200deg, #29E009 0%, #9FE009 100%); */
     border-radius: 10px;
     padding: 3vh;
     margin-bottom: 5vh;
     display: flex;
-    color: #ddd
+    color: #ddd;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
 }
 
 .target li p {
@@ -324,8 +364,13 @@ section.target {
 
 .target i {
     margin-right: 15px;
+    margin-left: 15px;
     font-size: 25px;
-    color: rgb(131, 8, 8);
+    color: #fa0000;
+}
+
+.target img {
+    display: block;
 }
 
 section.partners {

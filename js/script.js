@@ -121,7 +121,7 @@ const right = document.querySelector('.right');
 const changeManualyMobileLeft = function () {
     clearInterval(indexInterval);
     slideIndex--
-   dontRepeatUrself()
+    dontRepeatUrself()
 }
 
 const changeManualyMobileRight = function () {
@@ -134,3 +134,34 @@ const changeManualyMobileRight = function () {
 window.addEventListener('keydown', changeManualy)
 left.addEventListener('click', changeManualyMobileLeft)
 right.addEventListener('click', changeManualyMobileRight)
+
+
+//left - right art 1-5
+
+const showArt = () => {
+    const art1 = document.querySelector('.art1')
+    const art2 = document.querySelector('.art2')
+    const art3 = document.querySelector('.art3')
+    const art4 = document.querySelector('.art4')
+    const art5 = document.querySelector('.art5')
+    const position = window.scrollY;
+    console.log(position, art1.offsetTop, art1.clientHeight, window.innerHeight)
+    if (position > art1.offsetTop - window.innerHeight + art1.clientHeight / 2) {
+        art1.classList.add('active')
+    }
+    if (position > art2.offsetTop - window.innerHeight + art2.clientHeight / 2) {
+        art2.classList.add('active')
+    }
+    if (position > art3.offsetTop - window.innerHeight + art3.clientHeight / 2) {
+        art3.classList.add('active')
+    }
+    if (position > art4.offsetTop - window.innerHeight + art4.clientHeight / 2) {
+        art4.classList.add('active')
+    }
+    if (position > art5.offsetTop - window.innerHeight + art5.clientHeight / 2) {
+        art5.classList.add('active')
+    }
+}
+
+
+window.addEventListener('scroll', showArt)
