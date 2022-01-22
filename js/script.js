@@ -139,16 +139,18 @@ right.addEventListener('click', changeManualyMobileRight)
 //left - right art 1-5
 
 const showArt = () => {
-    const art1 = document.querySelector('.art1')
-    const art2 = document.querySelector('.art2')
-    const art3 = document.querySelector('.art3')
-    const art4 = document.querySelector('.art4')
-    const art5 = document.querySelector('.art5')
+    const art1 = document.querySelector('.art1');
+    const art2 = document.querySelector('.art2');
+    const art3 = document.querySelector('.art3');
+    const art4 = document.querySelector('.art4');
+    const art5 = document.querySelector('.art5');
+    const reset = document.querySelector('.partners');
     const position = window.scrollY;
-    console.log(position, art1.offsetTop, art1.clientHeight, window.innerHeight)
+    // let flag = 1
     if (position > art1.offsetTop - window.innerHeight + art1.clientHeight / 2) {
-        art1.classList.add('active')
+        art1.classList.add('active');
     }
+
     if (position > art2.offsetTop - window.innerHeight + art2.clientHeight / 2) {
         art2.classList.add('active')
     }
@@ -161,7 +163,58 @@ const showArt = () => {
     if (position > art5.offsetTop - window.innerHeight + art5.clientHeight / 2) {
         art5.classList.add('active')
     }
+
+    if (position < art5.offsetTop - window.innerHeight + art5.clientHeight / 2) {
+        art5.classList.add('active')
+    }
+
+    // const removeActive = () => {
+    //     art1.classList.remove('active');
+    //     art3.classList.remove('active');
+    //     art4.classList.remove('active');
+    //     art5.classList.remove('active');
+    //     art2.classList.remove('active');
+    // }
+    // if (position < art5.offsetTop && flag == true) {
+    //     flag = !flag
+    // }
+    // if (flag = false && position > reset.offsetTop ) {
+    //     art1.classList.remove('active');
+    //     art3.classList.remove('active');
+    //     art4.classList.remove('active');
+    //     art5.classList.remove('active');
+    //     art2.classList.remove('active');
+    //     flag = !flag
+
+    // }
 }
 
 
+
+
 window.addEventListener('scroll', showArt)
+
+
+//more
+
+const buton1 = document.querySelector('.first');
+const buton2 = document.querySelector('.second');
+const buton3 = document.querySelector('.third');
+const p1 = document.querySelector('.pFirst');
+const p2 = document.querySelector('.pSecond');
+const p3 = document.querySelector('.pThird');
+let flag = true
+const firstMore = () => {
+    p1.classList.toggle('off')
+    if (flag == true) {
+        buton1.textContent = 'mniej'
+        flag = !flag
+    } else {
+        buton1.textContent = 'więcej'
+        flag = !flag;
+    }
+    console.log(flag)
+}
+
+
+buton1.addEventListener('click', firstMore)
