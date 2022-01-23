@@ -868,7 +868,7 @@ section.price {
 
 .price h1 {
     text-transform: uppercase;
-    margin: 3vh 0 3vh;
+    margin-top: 3vh;
     padding-bottom: 5vh;
     border-bottom: 2px solid white;
     font-size: var(--fontSizeH1);
@@ -970,8 +970,8 @@ section.wayToContact {
     margin-top: 4vh;
 }
 
-.wayToContact .mail {
-    font-size: 16px;
+.wayToContact .mail a {
+    font-size: 18px;
 }
 
 section.bgc3 {
