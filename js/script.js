@@ -19,20 +19,6 @@
 
 // window.addEventListener('scroll', showPosition)
 
-//burger
-const burgerIcons = document.querySelectorAll('.burgerFas');
-const burgerNavi = document.querySelectorAll('nav ul li a');
-
-const burger = function () {
-    document.querySelector('nav').classList.toggle('off');
-    for (ico of burgerIcons) ico.classList.toggle('off');
-    document.querySelector('.burger').classList.toggle('off');
-    document.querySelector('.logoFirmyTop').classList.toggle('off');
-    document.querySelector('.nazwaFirmyTop').classList.toggle('off');
-}
-
-for (ico of burgerIcons) ico.addEventListener('click', burger);
-for (a of burgerNavi) a.addEventListener('click', burger);
 
 //pisanie na maszynie [HEADER]
 const motto = document.querySelector('.motto h2');
@@ -43,25 +29,55 @@ const authors = '- PAWEŁ & WOJTEK -';
 let i = 0;
 let j = 0;
 
-const writeQuote = () => {
-    motto.textContent += h2[i++]
-    if (i >= h2.length) {
-        clearInterval(maszynaQuote)
-        const writeAuthors = () => {
-            quoteAuthors.textContent += authors[j++]
-            if (j >= authors.length) clearInterval(maszynaAuthors)
+
+
+//preloader 
+
+const preload = document.querySelector('.preload');
+
+preload.classList.add('show-preloader');
+window.addEventListener('load', () => {
+    const writeQuote = () => {
+        motto.textContent += h2[i++]
+        if (i >= h2.length) {
+            clearInterval(maszynaQuote)
+            const writeAuthors = () => {
+                quoteAuthors.textContent += authors[j++]
+                if (j >= authors.length) clearInterval(maszynaAuthors)
+            }
+            const maszynaAuthors = setInterval(writeAuthors, 30)
         }
-        const maszynaAuthors = setInterval(writeAuthors, 30)
     }
+    preload.classList.remove('show-preloader');
+    let maszynaQuote = setInterval(writeQuote, 20)
+});
+
+//burger
+// const burgerIcons = document.querySelectorAll('.burgerFas');
+const burgerNavi = document.querySelectorAll('nav ul li a');
+const burg = document.querySelector('.plate1')
+
+const burger = function () {
+    document.querySelector('nav').classList.toggle('off');
+    burg.classList.toggle('active')
+    // for (ico of burgerIcons) ico.classList.toggle('off');
+    document.querySelector('.burger').classList.toggle('off');
+    document.querySelector('.logoFirmyTop').classList.toggle('off');
+    document.querySelector('.nazwaFirmyTop').classList.toggle('off');
 }
 
-let maszynaQuote = setInterval(writeQuote, 20)
+burg.addEventListener('click', burger);
+for (a of burgerNavi) a.addEventListener('click', burger);
+
+
+
 
 //reklama firm [slider]
 const time = 2000;
 const divs = [...document.querySelectorAll('.dots div')];
 const img = document.querySelector('.partners img')
-
+const iLeft = document.querySelector('.left i')
+const iRight = document.querySelector('.right i')
 const slide = [{
         img: "img/partnersSmall/partner0.png"
     },
@@ -130,7 +146,6 @@ const changeManualyMobileRight = function () {
     dontRepeatUrself()
 }
 
-
 window.addEventListener('keydown', changeManualy)
 left.addEventListener('click', changeManualyMobileLeft)
 right.addEventListener('click', changeManualyMobileRight)
@@ -164,9 +179,9 @@ const showArt = () => {
         art5.classList.add('active')
     }
 
-    if (position < art5.offsetTop - window.innerHeight + art5.clientHeight / 2) {
-        art5.classList.add('active')
-    }
+    // if (position < art5.offsetTop - window.innerHeight + art5.clientHeight / 2) {
+    //     art5.classList.add('active')
+    // }
 
     // const removeActive = () => {
     //     art1.classList.remove('active');
@@ -189,9 +204,6 @@ const showArt = () => {
     // }
 }
 
-
-
-
 window.addEventListener('scroll', showArt)
 
 
@@ -200,21 +212,74 @@ window.addEventListener('scroll', showArt)
 const buton1 = document.querySelector('.first');
 const buton2 = document.querySelector('.second');
 const buton3 = document.querySelector('.third');
+
+const faq1btn = document.querySelector('.faqBtn1');
+const faq2btn = document.querySelector('.faqBtn2');
+const faq3btn = document.querySelector('.faqBtn3');
+
 const p1 = document.querySelector('.pFirst');
 const p2 = document.querySelector('.pSecond');
 const p3 = document.querySelector('.pThird');
-let flag = true
+
+const p1faq = document.querySelector('.faq1');
+const p2faq = document.querySelector('.faq2');
+const p3faq = document.querySelector('.faq3');
+
+let flag1 = true
+let flag2 = true
+let flag3 = true
+
 const firstMore = () => {
     p1.classList.toggle('off')
-    if (flag == true) {
+    if (flag1 == true) {
         buton1.textContent = 'mniej'
-        flag = !flag
+        flag1 = !flag1
     } else {
         buton1.textContent = 'więcej'
-        flag = !flag;
+        flag1 = !flag1;
     }
-    console.log(flag)
+}
+const secondMore = () => {
+    p2.classList.toggle('off')
+    if (flag2 == true) {
+        buton2.textContent = 'mniej'
+        flag2 = !flag2
+    } else {
+        buton2.textContent = 'więcej'
+        flag2 = !flag2;
+    }
+}
+const thirdMore = () => {
+    p3.classList.toggle('off')
+    if (flag3 == true) {
+        buton3.textContent = 'mniej'
+        flag3 = !flag3
+    } else {
+        buton3.textContent = 'więcej'
+        flag3 = !flag3
+    }
 }
 
+const faq1more = () => {
+    p1faq.classList.toggle('off')
+    document.querySelectorAll('.fa-arrow-up.faq1i').forEach(arrowUp => arrowUp.classList.toggle('off'))
+    document.querySelectorAll('.fa-arrow-down.faq1i').forEach(arrowDown => arrowDown.classList.toggle('off'))
+}
+const faq2more = () => {
+    p2faq.classList.toggle('off')
+    document.querySelectorAll('.fa-arrow-up.faq2i').forEach(arrowUp => arrowUp.classList.toggle('off'))
+    document.querySelectorAll('.fa-arrow-down.faq2i').forEach(arrowDown => arrowDown.classList.toggle('off'))
+}
+const faq3more = () => {
+    p3faq.classList.toggle('off')
+    document.querySelectorAll('.fa-arrow-up.faq3i').forEach(arrowUp => arrowUp.classList.toggle('off'))
+    document.querySelectorAll('.fa-arrow-down.faq3i').forEach(arrowDown => arrowDown.classList.toggle('off'))
+}
 
 buton1.addEventListener('click', firstMore)
+buton2.addEventListener('click', secondMore)
+buton3.addEventListener('click', thirdMore)
+
+faq1btn.addEventListener('click', faq1more)
+faq2btn.addEventListener('click', faq2more)
+faq3btn.addEventListener('click', faq3more)

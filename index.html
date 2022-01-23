@@ -30,38 +30,69 @@
 </head>
 
 <body>
-    <aside class="burgerAside">
-
-        <div class="burger">
-            <img class='logoFirmyTop' src="img/favicon2.ico" alt="">
-            <h1 class="nazwaFirmyTop"><span>Bracia</span> Kaliscy</h1>
-            <i class="fas fa-bars burgerFas"></i>
-            <i class="fas fa-angle-up burgerFas off"></i>
+    <div class="preload">
+        <div class="spinner-box">
+            <div class="configure-border-1">
+                <div class="configure-core"></div>
+            </div>
+            <div class="configure-border-2">
+                <div class="configure-core"></div>
+            </div>
         </div>
+        <p>Ładowanie strony</p>
+    </div>
+
+    <div class="call">
+        <a class="fb2" href="https://www.facebook.com/messages/t/101183051489994"><i class="fab fa-facebook-messenger"></i></a>
+    </div>
+
+
+    <aside class="burgerAside">
+        <a href='https://wiktoorj.github.io/bracia-kaliscy/' class="burger">
+            <img class='logoFirmyTop' src="img/HEADERlogoWhite.png" alt="">
+            <h1 class="nazwaFirmyTop"><span>Bracia</span> Kaliscy</h1>
+            <svg>
+                <defs>
+                  <filter id="gooeyness">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness" />
+                    <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+                  </filter>
+                </defs>
+              </svg>
+                <div class="plate plate1">
+                  <svg class="eburger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+                    <path class="line line1" d="M 30,65 H 70"/>
+                    <path class="line line2" d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695"/>
+                    <path class="line line3" d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695"/>
+                  </svg>
+                  <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+                    <path class="line" d="M 34,32 L 66,68" />
+                    <path class="line" d="M 66,32 L 34,68" />
+                  </svg>
+                </div>
+        </a>
 
         <nav class="off">
             <ul>
                 <li><a href="#header"><i class="fas fa-home"></i>Strona Główna</a></li>
                 <li><a href="#offer"><i class="fab fa-black-tie"></i>Oferta</a></li>
-                <li><a href="#realizations"><i class="fas fa-award"></i>Nasze Realizacje</a></li>
+                <li><a href="#realizations"><i class="fas fa-award"></i>F.A.Q.</a></li>
                 <li><a href="#contact"><i class="far fa-address-card"></i>Kontakt</a></li>
             </ul>
         </nav>
     </aside>
-
     <div class="wrapper">
         <header id="header">
             <video src="img/video.mp4" autoplay loop playsinline muted></video>
             <div class="motto">
                 <h2></h2>
                 <h1 class="names"></h1>
+                <!-- <img src="img/headerSMALL.jpg" alt="owners"> -->
             </div>
-
-            <!-- <img src="img/headerSMALL.jpg" alt="owners"> -->
         </header>
 
         <main>
-
             <section class="target">
 
                 <h1>Jesteśmy dla Ciebie jeśli : </h1>
@@ -130,7 +161,8 @@
                     <iframe src="https://www.youtube.com/embed/yyKAaZofBY8" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-                    <p class='off pFirst'>Ich zadaniem jest zachęcenie klienta do dokonania zakupu danego produktu lub
+                    <p class='off pFirst moreBtn'>Ich zadaniem jest zachęcenie klienta do dokonania zakupu danego
+                        produktu lub
                         korzystania z
                         określonych usług oraz wykreowanie świadomości marki na rynku.</p>
                     <button class="moreAboutOfer first">więcej</button>
@@ -143,9 +175,12 @@
                         <iframe src="https://www.youtube.com/embed/cjNFBN1OUEc" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe></div>
-                    <p class='off pSecond'>Dobrze nagrany teledysk potrafi przyciągnąć i zainteresować nowych fanów.
+                    <p class='off pSecond moreBtn'>Dobrze nagrany teledysk potrafi przyciągnąć i zainteresować
+                        nowych
+                        fanów.
                         Dzięki niemu śledzenie
-                        piosenki jest dużo bardziej wciągające. Jest to prawdopodobnie najskuteczniejsza forma promocji
+                        piosenki jest dużo bardziej wciągające. Jest to prawdopodobnie najskuteczniejsza forma
+                        promocji
                         artysty.</p>
                     <button class="moreAboutOfer second">więcej</button>
 
@@ -156,7 +191,8 @@
                     <iframe src="https://www.youtube.com/embed/uB7JvkIh8Cw" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-                    <p class='off pThird'>Pozwalają na uwiecznienie ważnych wydarzeń przy jednoczesnym budowaniu
+                    <p class='off pThird moreBtn'>Pozwalają na uwiecznienie ważnych wydarzeń przy jednoczesnym
+                        budowaniu
                         prestiżowego i pozytywnego
                         wizerunku firmy. Taki film zawiera również wywiady czy lokowanie produktu.</p>
 
@@ -170,22 +206,28 @@
 
             <section class="price">
                 <h1>Ile to kosztuje?</h1>
-                <p>Ceny wahają się od kilkuset do kilkunastu tysięcy złotych. Można nagrać najprostszy film za kilkaset
-                    złotych, a można również wynająć całą ekipę, aktorów, lokacje, profesjonalnego lektora do napisania
-                    scenariusza i efekty specjalne, przez co całość może kosztować od kilku do nawet kilkunastu tysięcy
+                <p>Ceny wahają się od kilkuset do kilkunastu tysięcy złotych. Można nagrać najprostszy film za
+                    kilkaset
+                    złotych, a można również wynająć całą ekipę, aktorów, lokacje, profesjonalnego lektora do
+                    napisania
+                    scenariusza i efekty specjalne, przez co całość może kosztować od kilku do nawet kilkunastu
+                    tysięcy
                     złotych.</p>
 
-                <p>Jak robimy wycenę? Dobrą i często stosowaną praktyką jest ustalenie budżetu z góry. Mając określone
+                <p>Jak robimy wycenę? Dobrą i często stosowaną praktyką jest ustalenie budżetu z góry. Mając
+                    określone
                     widełki cenowe jesteśmy w stanie zaprezentować wachlarz możliwości dostosowując je do portfelu
                     klienta.</p>
 
                 <p>Jeśli nie znamy budżetu z góry - jesteśmy w stanie przedstawić proponowany przez nas kosztorys na
                     podstawie wspólnych ustaleń.</p>
 
-                <p>Aby to zrobić najpierw musimy znać założenia produkcji oraz jej cel. Na ich podstawie, razem z wami,
+                <p>Aby to zrobić najpierw musimy znać założenia produkcji oraz jej cel. Na ich podstawie, razem z
+                    wami,
                     ustalamy to jak film ma wyglądać - ile powinien trwać i jakie elementy powinien zawierać.</p>
 
-                <p>Przedstawimy wtedy koszt poszczególnych elementów i będziecie mogli zdecydować, które z nich chcecie
+                <p>Przedstawimy wtedy koszt poszczególnych elementów i będziecie mogli zdecydować, które z nich
+                    chcecie
                     zawrzeć w swoim filmie.</p>
             </section>
 
@@ -220,21 +262,41 @@
 
             <section id='realizations' class="faq">
                 <h1>Najczęściej zadawane pytania:</h1>
-                <h3>Jak wyglądają nagrania?</h3>
-                <p>Zawsze staramy się pokazać daną lokację z jak najlepszej strony - wiąże się to z wyborem odpowiedniej
+                <h3 class='faqBtn1'><i class="fas fa-arrow-down faq1i"></i><i class="fas fa-arrow-up faq1i off"></i>
+                    Jak
+                    wyglądają nagrania?
+                    <i class="fas fa-arrow-down faq1i"></i><i class="fas fa-arrow-up faq1i off"></i></h3>
+                <p class='faq1 off'>Zawsze staramy się pokazać daną lokację z jak najlepszej strony - wiąże się to z
+                    wyborem
+                    odpowiedniej
                     perspektywy, doborem oświetlenia, a także z ustawieniem nagrywanych elementów wystroju czy
                     wyposażenia.</p>
 
-                <p>Do każdej sceny i ujęcia podchodzimy indywidualnie i z należytą starannością - dbamy.</p>
+                <p class='faq1 off'>Do każdej sceny i ujęcia podchodzimy indywidualnie i z należytą starannością -
+                    dbamy.
+                </p>
 
-                <h3>Ile trwa produkcja filmu? </h3>
-                <p>Same nagrania mogą zająć od kilku godzin do kilku dni, zależnie od złożoności projektu. To samo tyczy
+                <h3 class='faqBtn2'><i class="fas fa-arrow-down faq2i"></i><i class="fas fa-arrow-up faq2i off"></i>
+                    Ile
+                    trwa produkcja
+                    filmu?
+                    <i class="fas fa-arrow-down faq2i"></i><i class="fas fa-arrow-up faq2i off"></i></h3>
+
+                <p class="faq2 off">Same nagrania mogą zająć od kilku godzin do kilku dni, zależnie od złożoności
+                    projektu.
+                    To samo tyczy
                     się późniejszej post produkcji materiału. Dokładne wartości są trudne do oszacowania i zależą od
-                    wielu czynników, jednak podczas ustalania założeń filmu i planu produkcji będziemy w stanie podać
+                    wielu czynników, jednak podczas ustalania założeń filmu i planu produkcji będziemy w stanie
+                    podać
                     przybliżony czas realizacji.</p>
 
-                <h3>Czy otrzymam fakturę? </h3>
-                <p>Tak - wystawiamy faktury bez vat.</p>
+                <h3 class='faqBtn3'><i class="fas fa-arrow-down faq3i"></i><i class="fas fa-arrow-up faq3i off"></i>
+                    Czy
+                    otrzymam
+                    fakturę?
+                    <i class="fas fa-arrow-down faq3i"></i><i class="fas fa-arrow-up faq3i off"></i></h3>
+                <p class="faq3 off">Tak - wystawiamy faktury bez vat.</p>
+                <div class="line"></div>
             </section>
 
             <section class="bgc4">
@@ -262,7 +324,7 @@
         </main>
 
         <footer>
-            <p>&copy; Bracia Kaliscy 2021</p>
+            <p>&copy; Bracia Kaliscy 2022</p>
             <p>Filmy Ślubne Pełne Emocji</p>
         </footer>
     </div>

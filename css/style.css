@@ -11,7 +11,7 @@
 :root {
     --fontSizeH1: 28px;
     --fontSizeH2: 118px;
-    --fontSizeH3: 16px;
+    --fontSizeH3: 24px;
     --fontSizeP: 14px;
 }
 
@@ -21,6 +21,219 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     transition: 1s;
+}
+
+div.call {
+    position: fixed;
+    bottom: 3%;
+    left: 5%;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    padding: 20px;
+    z-index: 1;background-color: black;
+}
+
+div.call i {
+    color: #ddd;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+div.call:hover {}
+
+.preload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: #10131a;
+    transition: opacity 400ms ease-in-out, visibility 0s 400ms;
+}
+
+.show-preloader {
+    visibility: visible;
+    opacity: 1;
+}
+
+.preload p {
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Signika', sans-serif;
+    letter-spacing: 2px;
+}
+
+@keyframes configure-clockwise {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes configure-xclockwise {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(-135deg);
+    }
+
+    75% {
+        transform: rotate(-225deg);
+    }
+
+    100% {
+        transform: rotate(-315deg);
+    }
+}
+
+.spinner-box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.configure-border-1 {
+    width: 115px;
+    height: 115px;
+    padding: 3px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-border-2 {
+    width: 115px;
+    height: 115px;
+    padding: 3px;
+    left: -115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    transform: rotate(45deg);
+    animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-core {
+    width: 100%;
+    height: 100%;
+    background-color: #1d2630;
+}
+
+/* //burger */
+svg {
+    height: 80px;
+    position: absolute;
+    width: 80px;
+}
+
+.plates {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 160px;
+    width: 640px;
+}
+
+@media (max-width: 640px) {
+    .plates {
+        width: 320px;
+    }
+}
+
+.plate {
+    height: 80px;
+    width: 80px;
+}
+
+.eburger {
+    filter: url(#gooeyness);
+}
+
+.x {
+    transform: scale(0);
+    transition: transform 400ms;
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 50%;
+    transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+}
+
+.x .line {
+    stroke-width: 5.5px;
+}
+
+/* First plate */
+.plate1 .line2 {
+    stroke-dasharray: 40 200;
+    stroke-dashoffset: 0px;
+}
+
+.plate1 .line3 {
+    stroke-dasharray: 40 179;
+    stroke-dashoffset: 0px;
+}
+
+.active .line {
+    transition: stroke-dasharray 500ms, stroke-dashoffset 500ms, transform 500ms;
+}
+
+.active.plate1 .line1 {
+    transform: scale(0, 1);
+    transition: transform 500ms 100ms;
+}
+
+.active.plate1 .line2 {
+    stroke-dasharray: 5px 200;
+    stroke-dashoffset: -164px;
+}
+
+.active.plate1 .line3 {
+    stroke-dasharray: 5px 179;
+    stroke-dashoffset: -142px;
+}
+
+.active .x {
+    transform: scale(1);
+    transition: transform 400ms 350ms;
 }
 
 .burger {
@@ -38,6 +251,7 @@ body {
     z-index: 10;
     color: #ddd;
     transition: .2s ease-out;
+    text-decoration: none;
 }
 
 .nazwaFirmyTop {
@@ -47,7 +261,8 @@ body {
 }
 
 .logoFirmyTop {
-    height: 80%;
+    height: 70%;
+    margin: 0 5%;
 }
 
 .nazwaFirmyTop.off,
@@ -57,11 +272,9 @@ i.off {
 }
 
 .burger.off {
-    top: 85%;
-    animation: navArrow 2s 1s infinite;
     background-color: transparent;
     justify-content: end;
-    padding-right: 10%;
+    /* padding-right: 10%; */
 }
 
 @keyframes navArrow {
@@ -86,10 +299,7 @@ i.off {
     }
 }
 
-i.fa-angle-up {
-    font-size: 40px;
-    color: white;
-}
+/*  */
 
 nav {
     position: fixed;
@@ -100,9 +310,9 @@ nav {
     transition: .2s ease-out;
     z-index: 9;
     /* background-image: url(../img/nav.png); */
-    background-position: center;
+    /* background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     background: radial-gradient(rgb(133, 123, 123) 0%, #b1b9b9 100%);
     display: flex;
     flex-direction: column;
@@ -118,6 +328,7 @@ nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 5vh;
 }
 
 nav ul::before {
@@ -297,7 +508,6 @@ section.target,
 section.typeOfWork,
 section.price,
 section.wayToContact,
-section.faq,
 section.contact {
     min-height: 100vh;
     display: flex;
@@ -319,10 +529,10 @@ section.target {
     margin: 5vh 0;
     font-size: var(--fontSizeH1);
     color: #fa0000;
+    border-top: 2px solid #fa0000;
     text-align: center;
     text-transform: uppercase;
     /* background: linear-gradient(135deg, #a09e9e 0%, #4d4d48 100%); */
-    border-radius: 10px;
     padding: 2vh
 }
 
@@ -354,8 +564,8 @@ section.target {
 }
 
 .target li {
-
-    background: radial-gradient(rgb(128, 125, 125) 0%, #2a2b2b 100%);
+    box-shadow: 0 0 0 5px black, 0 0 0 6px #fa0000;
+    background: radial-gradient(rgb(8, 4, 4) 0%, #2a2b2b 100%);
     /* background: linear-gradient(200deg, #29E009 0%, #9FE009 100%); */
     border-radius: 10px;
     padding: 3vh;
@@ -374,7 +584,7 @@ section.target {
 .target i {
     margin-right: 15px;
     margin-left: 15px;
-    font-size: 25px;
+    font-size: 30px;
     color: #fa0000;
 }
 
@@ -455,7 +665,6 @@ section.partners {
     top: 50%;
     font-size: 50px;
     color: #9c9a9b;
-    animation: changeArrowColor 2s infinite
 }
 
 .partners .left {
@@ -474,30 +683,11 @@ section.partners {
     top: 50%;
     font-size: 50px;
     color: #9c9a9b;
-    animation: changeArrowColor 2s infinite
 }
 
-@keyframes changeArrowColor {
-    0% {
-        color: #9c9a9b;
-    }
-
-    95% {
-        color: #9c9a9b
-    }
-
-    96% {
-        color: black;
-    }
-
-    100% {
-        color: black;
-    }
-}
 
 section.typeOfWork {
     background-image: url(../img/structure.jpg);
-    background-size: cover;
     text-align: center;
     padding: 5vh 0 0;
 }
@@ -515,8 +705,9 @@ section.typeOfWork {
 
 .typeOfWork article {
     background: linear-gradient(135deg, #272727 0%, #4d4d48 100%);
+    /* background: radial-gradient(rgb(70, 64, 64) 0%, #2a2b2b 100%); */
     /* background: linear-gradient(200deg, #29E009 0%, #9FE009 100%); */
-    padding: 5vh 5% 10vh;
+    padding: 5vh 5%;
     width: 90%;
     margin: 0 auto 10vh;
     border-radius: 10px;
@@ -538,8 +729,9 @@ section.typeOfWork {
 }
 
 .typeOfWork article p {
-    margin: 10vh 0 0;
-    font-size: 24px;
+    margin: 5vh 0 0;
+    font-size: 20px;
+    letter-spacing: 2px;
     font-style: italic;
     color: white;
     transition: 2s;
@@ -547,8 +739,6 @@ section.typeOfWork {
 
 .typeOfWork article p.off {
     display: none;
-    opacity: 0;
-
 }
 
 .moreAboutOfer {
@@ -559,10 +749,10 @@ section.typeOfWork {
     text-transform: uppercase;
     border-radius: 15px;
     letter-spacing: 2px;
-    font-size: 22px;
-    border: 2px solid white;
+    font-size: 20px;
+    border: 2px solid red;
     /* background-color: rgba(255, 255, 255, .6); */
-    background-color: rgb(109, 100, 100);
+    background-color: rgb(63, 58, 58);
     color: white;
     position: relative;
     /* transform: translate(-50%, -50%); */
@@ -572,14 +762,15 @@ section.typeOfWork {
     animation-iteration-count: infinite;
     cursor: pointer;
     /* margin: 5vh 0 10vh; */
-    margin: 10vh auto 0
+    margin: 5vh auto 0
 }
 
 @keyframes buttonA {
     0% {
-        transform: translateX(0) scale(1.0);
+        transform: scale(0.9);
     }
 
+    /* 
     41% {
         transform: translateX(0);
     }
@@ -610,14 +801,14 @@ section.typeOfWork {
 
     48% {
         transform: translateX(-10%)
-    }
+    } */
 
     49% {
-        transform: translateX(0) scale(1.1);
+        transform: scale(1);
     }
 
     100% {
-        transform: translateX(0) scale(1.0);
+        transform: scale(0.9);
     }
 
 }
@@ -629,7 +820,7 @@ section.typeOfWork {
     top: 0;
     bottom: 0;
     width: 3px;
-    background-color: white;
+    background-color: red;
     transition: .3s linear;
 }
 
@@ -644,7 +835,7 @@ section.typeOfWork {
     left: 0;
     right: 0;
     height: 2px;
-    background-color: white;
+    background-color: red;
     transition: .3s .4s linear;
 }
 
@@ -669,16 +860,13 @@ section.bgc1 {
 
 section.price {
     text-align: center;
-    min-height: 180vh;
+    /* min-height: 180vh; */
     background-color: black;
+    background: radial-gradient(rgb(70, 64, 64) 0%, #2a2b2b 100%);
     color: white;
     padding: 3vh 5%;
-    border-bottom: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
-    box-shadow: 0 0 0 2px white, 0 0 0 6px black;
+    border: 2px solid white;
     border-radius: 10px;
-
 }
 
 .price h1 {
@@ -690,7 +878,7 @@ section.price {
 }
 
 .price p {
-    font-size: 16px;
+    font-size: 18px;
     padding-bottom: 5vh;
     padding-top: 5vh;
     border-bottom: 1px dashed white;
@@ -740,9 +928,13 @@ section.wayToContact {
     box-shadow: 0 0 0 2px black, 0 0 0 4px rgb(173, 8, 8);
 }
 
+.wayToContact .callUs p {
+    font-size: 22px;
+}
+
 .wayToContact h3 {
     padding: 3vh 0 0;
-    font-size: var(--fontSizeH1);
+    font-size: var(--fontSizeH3);
 }
 
 .wayToContact i {
@@ -756,7 +948,7 @@ section.wayToContact {
 
 .wayToContact p {
     margin: 3vh 0;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .wayToContact .pawel {
@@ -790,12 +982,12 @@ section.bgc3 {
 }
 
 section.faq {
-    min-height: 150vh;
+    padding: 10vh 5%;
     background-color: black;
     color: white;
     border: 2px solid white;
     box-shadow: 0 0 0 6px black, 0 0 0 8px white;
-    padding-bottom: 10vh;
+
 }
 
 .faq h1 {
@@ -807,15 +999,38 @@ section.faq {
 }
 
 .faq h3 {
-    padding-top: 5vh;
-    padding-bottom: 3vh;
-    border-bottom: 2px solid rgb(173, 8, 8);
+    margin-top: 3vh;
+    padding: 3vh 0;
+    text-align: center;
+    border: 2px solid rgb(173, 8, 8);
     color: rgb(173, 8, 8);
-    font-size: 22px
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.faq.fas.off {
+    display: none
 }
 
 .faq p {
-    padding-top: 3vh;
+    color: #ddd;
+    margin-bottom: 3vh;
+    padding: 3vh;
+    font-size: 19px;
+    text-align: center;
+
+    background: radial-gradient(rgb(124, 8, 8) 0%, #570303 100%);
+}
+
+.faq p.off {
+    display: none;
+}
+
+.faq .line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    margin-top: 3vh;
 }
 
 section.bgc4 {
