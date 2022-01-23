@@ -30,7 +30,8 @@ div.call {
     border: 2px solid #ddd;
     border-radius: 50%;
     padding: 20px;
-    z-index: 1;background-color: black;
+    z-index: 1;
+    background-color: black;
 }
 
 div.call i {
@@ -38,8 +39,6 @@ div.call i {
     font-size: 26px;
     font-weight: 700;
 }
-
-div.call:hover {}
 
 .preload {
     display: flex;
@@ -299,8 +298,6 @@ i.off {
     }
 }
 
-/*  */
-
 nav {
     position: fixed;
     left: 0;
@@ -308,7 +305,7 @@ nav {
     top: 0;
     height: 100vh;
     transition: .2s ease-out;
-    z-index: 9;
+    z-index: 15;
     /* background-image: url(../img/nav.png); */
     /* background-position: center;
     background-repeat: no-repeat;
