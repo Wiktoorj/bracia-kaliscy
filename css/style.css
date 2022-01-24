@@ -231,7 +231,10 @@ svg {
 
 .x .line {
     stroke-width: 5.5px;
-    animation: navArrow 4s infinite ease-out
+    animation: navArrow 4s infinite ease-out;
+    position: absolute;
+    right: 5%;
+
 }
 
 /* First plate */
