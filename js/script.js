@@ -229,36 +229,36 @@ let flag1 = true
 let flag2 = true
 let flag3 = true
 
-const firstMore = () => {
-    p1.classList.toggle('off')
-    if (flag1 == true) {
-        buton1.textContent = 'mniej'
-        flag1 = !flag1
-    } else {
-        buton1.textContent = 'więcej'
-        flag1 = !flag1;
-    }
-}
-const secondMore = () => {
-    p2.classList.toggle('off')
-    if (flag2 == true) {
-        buton2.textContent = 'mniej'
-        flag2 = !flag2
-    } else {
-        buton2.textContent = 'więcej'
-        flag2 = !flag2;
-    }
-}
-const thirdMore = () => {
-    p3.classList.toggle('off')
-    if (flag3 == true) {
-        buton3.textContent = 'mniej'
-        flag3 = !flag3
-    } else {
-        buton3.textContent = 'więcej'
-        flag3 = !flag3
-    }
-}
+// const firstMore = () => {
+//     p1.classList.toggle('off')
+//     if (flag1 == true) {
+//         buton1.textContent = 'mniej'
+//         flag1 = !flag1
+//     } else {
+//         buton1.textContent = 'więcej'
+//         flag1 = !flag1;
+//     }
+// }
+// const secondMore = () => {
+//     p2.classList.toggle('off')
+//     if (flag2 == true) {
+//         buton2.textContent = 'mniej'
+//         flag2 = !flag2
+//     } else {
+//         buton2.textContent = 'więcej'
+//         flag2 = !flag2;
+//     }
+// }
+// const thirdMore = () => {
+//     p3.classList.toggle('off')
+//     if (flag3 == true) {
+//         buton3.textContent = 'mniej'
+//         flag3 = !flag3
+//     } else {
+//         buton3.textContent = 'więcej'
+//         flag3 = !flag3
+//     }
+// }
 
 const faq1more = () => {
     p1faq.forEach(p => p.classList.toggle('off'))
@@ -276,9 +276,9 @@ const faq3more = () => {
     document.querySelectorAll('.fa-arrow-down.faq3i').forEach(arrowDown => arrowDown.classList.toggle('off'))
 }
 
-buton1.addEventListener('click', firstMore)
-buton2.addEventListener('click', secondMore)
-buton3.addEventListener('click', thirdMore)
+// buton1.addEventListener('click', firstMore)
+// buton2.addEventListener('click', secondMore)
+// buton3.addEventListener('click', thirdMore)
 
 faq1btn.addEventListener('click', faq1more)
 faq2btn.addEventListener('click', faq2more)
