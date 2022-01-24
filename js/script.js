@@ -37,19 +37,19 @@ const preload = document.querySelector('.preload');
 
 preload.classList.add('show-preloader');
 window.addEventListener('load', () => {
-    const writeQuote = () => {
-        motto.textContent += h2[i++]
-        if (i >= h2.length) {
-            clearInterval(maszynaQuote)
-            const writeAuthors = () => {
-                quoteAuthors.textContent += authors[j++]
-                if (j >= authors.length) clearInterval(maszynaAuthors)
-            }
-            const maszynaAuthors = setInterval(writeAuthors, 30)
-        }
-    }
+    // const writeQuote = () => {
+    //     motto.textContent += h2[i++]
+    //     if (i >= h2.length) {
+    //         clearInterval(maszynaQuote)
+    //         const writeAuthors = () => {
+    //             quoteAuthors.textContent += authors[j++]
+    //             if (j >= authors.length) clearInterval(maszynaAuthors)
+    //         }
+    //         const maszynaAuthors = setInterval(writeAuthors, 30)
+    //     }
+
     preload.classList.remove('show-preloader');
-    let maszynaQuote = setInterval(writeQuote, 20)
+    // let maszynaQuote = setInterval(writeQuote, 20)
 });
 
 //burger
@@ -79,22 +79,22 @@ const img = document.querySelector('.partners img')
 const iLeft = document.querySelector('.left i')
 const iRight = document.querySelector('.right i')
 const slide = [{
-        img: "img/partnersSmall/partner0.png"
+        img: "img/partnersSmall/partners0.png"
     },
     {
-        img: "img/partnersSmall/partner1.png"
+        img: "img/partnersSmall/partners1.png"
     },
     {
-        img: "img/partnersSmall/partner2.png"
+        img: "img/partnersSmall/partners2.png"
     },
     {
-        img: "img/partnersSmall/partner3.png"
+        img: "img/partnersSmall/partners3.png"
     },
     {
-        img: "img/partnersSmall/partner4.png"
+        img: "img/partnersSmall/partners4.png"
     },
     {
-        img: "img/partnersSmall/partner5.png"
+        img: "img/partnersSmall/partners5.png"
     }
 ]
 
