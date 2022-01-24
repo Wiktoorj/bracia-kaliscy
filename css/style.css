@@ -860,20 +860,10 @@ section.typeOfWork {
     bottom: 100%;
 }
 
-section.bgc1,
-section.bgc2,
-section.bgc3,
-section.bgc4 {
-    height: 70vh;
-    max-height: 70vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
+
 
 section.bgc1 {
-    background-image: url(../img/bg2.jpg)
+    background-image: url(../img/bgc1.jpg)
 }
 
 section.price {
@@ -1155,4 +1145,17 @@ footer a,
     text-decoration: none;
     margin-top: 3vh;
     font-size: 22px;
+}
+
+section.bgc1,
+section.bgc2,
+section.bgc3,
+section.bgc4 {
+    height: 70vh;
+    max-height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url(../img/bgc1.jpg)
 }
