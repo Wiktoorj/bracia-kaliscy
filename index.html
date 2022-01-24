@@ -53,25 +53,28 @@
             <a href='#header' onclick="window.location.reload(true);" class="nazwaFirmyTop"><span>Bracia</span> Kaliscy</a>
             <svg>
                 <defs>
-                  <filter id="gooeyness">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
-                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness" />
-                    <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
-                  </filter>
+                    <filter id="gooeyness">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                            result="gooeyness" />
+                        <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
+                    </filter>
                 </defs>
-              </svg>
-                <div class="plate plate1">
-                  <svg class="eburger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
-                    <path class="line line1" d="M 30,65 H 70"/>
-                    <path class="line line2" d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695"/>
-                    <path class="line line3" d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695"/>
-                  </svg>
-                  <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+            </svg>
+            <div class="plate plate1">
+                <svg class="eburger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+                    <path class="line line1" d="M 30,65 H 70" />
+                    <path class="line line2"
+                        d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695" />
+                    <path class="line line3"
+                        d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695" />
+                </svg>
+                <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
                     <path class="line" d="M 34,32 L 66,68" />
                     <path class="line" d="M 66,32 L 34,68" />
-                  </svg>
-                </div>
+                </svg>
             </div>
+        </div>
 
         <nav class="off">
             <ul>
@@ -86,8 +89,9 @@
         <header id="header">
             <video src="img/video.mp4" autoplay loop playsinline muted></video>
             <div class="motto">
-                <h2></h2>
-                <h1 class="names"></h1>
+                <h2>"Za każdym razem staramy się stworzyć taki film który pozwoli wam osiągnąć wasze cele. Bo wasz
+                    sukces jest też naszym sukcesem."</h2>
+                <h1 class="names">- PAWEŁ & WOJTEK -</h1>
             </div>
         </header>
 
@@ -101,7 +105,6 @@
                         <p>Chcesz filmu który pomoże budować pozytywny i prestiżowy
                             wizerunek firmy wśród klientów i
                             pracowników.</p>
-                        <i class="fas fa-chevron-left"></i>
                     </li>
 
                     <li class="art2">
@@ -109,26 +112,22 @@
                         <p>Szukasz sposobu na zyskanie rozgłosu oraz dotarcie do
                             nowych klientów - filmowe reklamy
                             klikają się znacznie częściej niż banery i zdjęcia</p>
-                        <i class="fas fa-chevron-left"></i>
                     </li>
                     <li class="art3">
                         <i class="fas fa-chevron-right"></i>
                         <p>Oczekujesz efektywnego filmu który wzbudzi emocje i
                             skłoni do działania</p>
-                        <i class="fas fa-chevron-left"></i>
                     </li>
                     <li class="art4">
                         <i class="fas fa-chevron-right"></i>
                         <p>Szukasz sposobu na zaprezentowanie istniejących bądź
                             nowych produktów czy usług</p>
-                        <i class="fas fa-chevron-left"></i>
                     </li>
                     <li class="art5">
                         <i class="fas fa-chevron-right"></i>
                         <p>Szukasz wykonawców którzy przeprowadzą przez cały proces
                             zamiany twoich idei i pomysłów na
                             film</p>
-                        <i class="fas fa-chevron-left"></i>
                     </li>
                 </ul>
                 <img src="imgBIG/headerBIG.jpg" alt="">
@@ -261,40 +260,42 @@
 
             <section id='realizations' class="faq">
                 <h1>Najczęściej zadawane pytania:</h1>
-                <h3 class='faqBtn1'><i class="fas fa-arrow-down faq1i"></i><i class="fas fa-arrow-up faq1i off"></i>
-                    Jak
-                    wyglądają nagrania?
-                    <i class="fas fa-arrow-down faq1i"></i><i class="fas fa-arrow-up faq1i off"></i></h3>
-                <p class='faq1 off'>Zawsze staramy się pokazać daną lokację z jak najlepszej strony - wiąże się to z
-                    wyborem
-                    odpowiedniej
-                    perspektywy, doborem oświetlenia, a także z ustawieniem nagrywanych elementów wystroju czy
-                    wyposażenia.</p>
+                <div class="faqList">
+                    <h3 class='faqBtn1'><i class="fas fa-arrow-down faq1i"></i><i
+                            class="fas fa-arrow-up faq1i off"></i>Jak
+                        wyglądają nagrania? <i class="fas fa-arrow-up faq1i off"></i><i
+                            class="fas fa-arrow-down faq1i"></i>
+                    </h3>
+                    <p class='faq1 off'>Zawsze staramy się pokazać daną lokację z jak najlepszej strony - wiąże się to z
+                        wyborem
+                        odpowiedniej
+                        perspektywy, doborem oświetlenia, a także z ustawieniem nagrywanych elementów wystroju czy
+                        wyposażenia.</p>
 
-                <p class='faq1 off'>Do każdej sceny i ujęcia podchodzimy indywidualnie i z należytą starannością -
-                    dbamy.
-                </p>
+                    <p class='faq1 off'>Do każdej sceny i ujęcia podchodzimy indywidualnie i z należytą starannością -
+                        dbamy.
+                    </p>
 
-                <h3 class='faqBtn2'><i class="fas fa-arrow-down faq2i"></i><i class="fas fa-arrow-up faq2i off"></i>
-                    Ile
-                    trwa produkcja
-                    filmu?
-                    <i class="fas fa-arrow-down faq2i"></i><i class="fas fa-arrow-up faq2i off"></i></h3>
+                    <h3 class='faqBtn2'><i class="fas fa-arrow-down faq2i"></i><i class="fas fa-arrow-up faq2i off"></i>
+                        Ile
+                        trwa produkcja filmu? <i class="fas fa-arrow-up faq2i off"></i><i
+                            class="fas fa-arrow-down faq2i"></i></h3>
 
-                <p class="faq2 off">Same nagrania mogą zająć od kilku godzin do kilku dni, zależnie od złożoności
-                    projektu.
-                    To samo tyczy
-                    się późniejszej post produkcji materiału. Dokładne wartości są trudne do oszacowania i zależą od
-                    wielu czynników, jednak podczas ustalania założeń filmu i planu produkcji będziemy w stanie
-                    podać
-                    przybliżony czas realizacji.</p>
+                    <p class="faq2 off">Same nagrania mogą zająć od kilku godzin do kilku dni, zależnie od złożoności
+                        projektu.
+                        To samo tyczy
+                        się późniejszej post produkcji materiału. Dokładne wartości są trudne do oszacowania i zależą od
+                        wielu czynników, jednak podczas ustalania założeń filmu i planu produkcji będziemy w stanie
+                        podać
+                        przybliżony czas realizacji.</p>
 
-                <h3 class='faqBtn3'><i class="fas fa-arrow-down faq3i"></i><i class="fas fa-arrow-up faq3i off"></i>
-                    Czy
-                    otrzymam
-                    fakturę?
-                    <i class="fas fa-arrow-down faq3i"></i><i class="fas fa-arrow-up faq3i off"></i></h3>
-                <p class="faq3 off">Tak - wystawiamy faktury bez vat.</p>
+                    <h3 class='faqBtn3'><i class="fas fa-arrow-down faq3i"></i><i class="fas fa-arrow-up faq3i off"></i>
+                        Czy
+                        otrzymam fakturę? <i class="fas fa-arrow-up faq3i off"></i><i
+                            class="fas fa-arrow-down faq3i"></i>
+                    </h3>
+                    <p class="faq3 off">Tak - wystawiamy faktury bez vat.</p>
+                </div>
                 <div class="line"></div>
             </section>
 

@@ -21,13 +21,13 @@
 
 
 //pisanie na maszynie [HEADER]
-const motto = document.querySelector('.motto h2');
-const quoteAuthors = document.querySelector('.names');
-const h2 = '"Za każdym razem staramy się stworzyć taki film który pozwoli wam osiągnąć wasze cele. Bo wasz sukces jest też naszym sukcesem."'
-const authors = '- PAWEŁ & WOJTEK -';
+// const motto = document.querySelector('.motto h2');
+// const quoteAuthors = document.querySelector('.names');
+// const h2 = '"Za każdym razem staramy się stworzyć taki film który pozwoli wam osiągnąć wasze cele. Bo wasz sukces jest też naszym sukcesem."'
+// const authors = '- PAWEŁ & WOJTEK -';
 
-let i = 0;
-let j = 0;
+// let i = 0;
+// let j = 0;
 
 
 
@@ -221,7 +221,7 @@ const p1 = document.querySelector('.pFirst');
 const p2 = document.querySelector('.pSecond');
 const p3 = document.querySelector('.pThird');
 
-const p1faq = document.querySelector('.faq1');
+const p1faq = document.querySelectorAll('.faq1');
 const p2faq = document.querySelector('.faq2');
 const p3faq = document.querySelector('.faq3');
 
@@ -261,7 +261,7 @@ const thirdMore = () => {
 }
 
 const faq1more = () => {
-    p1faq.classList.toggle('off')
+    p1faq.forEach(p => p.classList.toggle('off'))
     document.querySelectorAll('.fa-arrow-up.faq1i').forEach(arrowUp => arrowUp.classList.toggle('off'))
     document.querySelectorAll('.fa-arrow-down.faq1i').forEach(arrowDown => arrowDown.classList.toggle('off'))
 }
