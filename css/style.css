@@ -21,6 +21,12 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     transition: 1s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 div.call {
@@ -175,15 +181,41 @@ svg {
 .plate {
     height: 80px;
     width: 80px;
+
+}
+
+@keyframes navArrow {
+    1% {
+        transform: rotate(-10deg);
+    }
+
+    4% {
+        transform: rotate(10deg);
+    }
+
+    6% {
+        transform: rotate(-10deg);
+    }
+
+    7% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .eburger {
     filter: url(#gooeyness);
+
+
 }
 
 .x {
     transform: scale(0);
     transition: transform 400ms;
+
 }
 
 .line {
@@ -194,10 +226,12 @@ svg {
     stroke-linejoin: round;
     transform-origin: 50%;
     transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+
 }
 
 .x .line {
     stroke-width: 5.5px;
+    animation: navArrow 4s infinite ease-out
 }
 
 /* First plate */
@@ -247,7 +281,7 @@ svg {
     background-color: rgba(0, 0, 0, 1);
     font-size: 30px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 20;
     color: #ddd;
     transition: .2s ease-out;
     text-decoration: none;
@@ -257,6 +291,9 @@ svg {
     font-size: 26px;
     text-transform: uppercase;
     text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 .logoFirmyTop {
@@ -276,27 +313,6 @@ i.off {
     /* padding-right: 10%; */
 }
 
-@keyframes navArrow {
-    10% {
-        top: 82%;
-    }
-
-    20% {
-        top: 88%;
-    }
-
-    30% {
-        top: 84%;
-    }
-
-    40% {
-        top: 86%;
-    }
-
-    100% {
-        top: 86%;
-    }
-}
 
 nav {
     position: fixed;
@@ -325,7 +341,7 @@ nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 5vh;
+    padding-bottom: 5vh;
 }
 
 nav ul::before {
@@ -337,7 +353,7 @@ nav ul::before {
     position: absolute;
     top: 10%;
     left: 100%;
-    animation: ulBeforeTop 2s infinite;
+    animation: ulBeforeTop 2s infinite cubic-bezier(1, 0.48, 0.34, 1.03) alternate-reverse;
 }
 
 @keyframes ulBeforeTop {
@@ -355,7 +371,7 @@ nav ul::after {
     position: absolute;
     top: -100%;
     left: 4%;
-    animation: ulAfterBotLeft 2s infinite;
+    animation: ulAfterBotLeft 2s infinite cubic-bezier(1, 0.48, 0.34, 1.03) alternate-reverse;
 }
 
 @keyframes ulAfterBotLeft {
@@ -374,7 +390,7 @@ nav::before {
     position: absolute;
     bottom: 15%;
     left: -100%;
-    animation: ulBeforeBot 2s infinite;
+    animation: ulBeforeBot 2s infinite cubic-bezier(1, 0.48, 0.34, 1.03) alternate-reverse;
 }
 
 @keyframes ulBeforeBot {
@@ -392,7 +408,7 @@ nav::after {
     position: absolute;
     top: 100%;
     right: 4%;
-    animation: ulAfterBotRight 2s infinite;
+    animation: ulAfterBotRight 2s infinite cubic-bezier(1, 0.48, 0.34, 1.03) alternate-reverse;
 }
 
 @keyframes ulAfterBotRight {
@@ -1120,5 +1136,13 @@ footer {
 
 footer p {
     text-transform: uppercase;
-    margin-top: 10px;
+    margin-top: 3vh;
+}
+
+footer a,
+.author {
+    color: yellow;
+    text-decoration: none;
+    margin-top: 3vh;
+    font-size: 22px;
 }
