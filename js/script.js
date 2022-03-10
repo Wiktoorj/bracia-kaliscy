@@ -33,24 +33,24 @@
 
 //preloader 
 
-// const preload = document.querySelector('.preload');
+const preload = document.querySelector('.preload');
 
-// preload.classList.add('show-preloader');
-// window.addEventListener('load', () => {
-//     // const writeQuote = () => {
-//     //     motto.textContent += h2[i++]
-//     //     if (i >= h2.length) {
-//     //         clearInterval(maszynaQuote)
-//     //         const writeAuthors = () => {
-//     //             quoteAuthors.textContent += authors[j++]
-//     //             if (j >= authors.length) clearInterval(maszynaAuthors)
-//     //         }
-//     //         const maszynaAuthors = setInterval(writeAuthors, 30)
-//     //     }
+preload.classList.add('show-preloader');
+window.addEventListener('load', () => {
+    // const writeQuote = () => {
+    //     motto.textContent += h2[i++]
+    //     if (i >= h2.length) {
+    //         clearInterval(maszynaQuote)
+    //         const writeAuthors = () => {
+    //             quoteAuthors.textContent += authors[j++]
+    //             if (j >= authors.length) clearInterval(maszynaAuthors)
+    //         }
+    //         const maszynaAuthors = setInterval(writeAuthors, 30)
+    //     }
 
-//     preload.classList.remove('show-preloader');
-//     // let maszynaQuote = setInterval(writeQuote, 20)
-// });
+    preload.classList.remove('show-preloader');
+    // let maszynaQuote = setInterval(writeQuote, 20)
+});
 
 //burger
 const burgerIcons = document.querySelectorAll('.burgerFas');
