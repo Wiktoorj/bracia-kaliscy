@@ -11,7 +11,7 @@
 }
 
 :root {
-    --fontSizeH1: 28px;
+    --fontSizeH1: 25px;
     --fontSizeH2: 118px;
     --fontSizeH3: 24px;
     --fontSizeP: 14px;
@@ -335,7 +335,6 @@ nav {
     flex-direction: column;
     /* justify-content: center; */
     overflow: hidden;
-    padding-top: 5%;
 
 }
 
@@ -347,7 +346,7 @@ nav ul {
     flex-direction: column;
     justify-content: center;
     padding-bottom: 5vh;
-    padding-top: 12vh;
+    padding-top: 17vh;
 }
 
 /* nav ul::before {
@@ -928,7 +927,8 @@ section.price {
     background: radial-gradient(rgb(70, 64, 64) 0%, #2a2b2b 100%);
     color: white;
     padding: 3vh 5%;
-    border: 2px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     border-radius: 10px;
 }
 
@@ -957,7 +957,8 @@ section.bgc2 {
 
 section.wayToContact {
     background-color: black;
-    border: 2px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     border-radius: 10px;
     color: white;
     padding-top: 5vh;
@@ -1049,7 +1050,8 @@ section.faq {
     padding: 10vh 5%;
     background-color: black;
     color: white;
-    border: 2px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     box-shadow: 0 0 0 6px black, 0 0 0 8px white;
 
 }
@@ -1088,7 +1090,6 @@ section.faq {
     padding: 3vh;
     font-size: 19px;
     text-align: center;
-
     background: radial-gradient(rgb(124, 8, 8) 0%, #570303 100%);
 }
 
