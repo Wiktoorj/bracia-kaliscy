@@ -33,27 +33,27 @@
 
 //preloader 
 
-const preload = document.querySelector('.preload');
+// const preload = document.querySelector('.preload');
 
-preload.classList.add('show-preloader');
-window.addEventListener('load', () => {
-    // const writeQuote = () => {
-    //     motto.textContent += h2[i++]
-    //     if (i >= h2.length) {
-    //         clearInterval(maszynaQuote)
-    //         const writeAuthors = () => {
-    //             quoteAuthors.textContent += authors[j++]
-    //             if (j >= authors.length) clearInterval(maszynaAuthors)
-    //         }
-    //         const maszynaAuthors = setInterval(writeAuthors, 30)
-    //     }
+// preload.classList.add('show-preloader');
+// window.addEventListener('load', () => {
+//     // const writeQuote = () => {
+//     //     motto.textContent += h2[i++]
+//     //     if (i >= h2.length) {
+//     //         clearInterval(maszynaQuote)
+//     //         const writeAuthors = () => {
+//     //             quoteAuthors.textContent += authors[j++]
+//     //             if (j >= authors.length) clearInterval(maszynaAuthors)
+//     //         }
+//     //         const maszynaAuthors = setInterval(writeAuthors, 30)
+//     //     }
 
-    preload.classList.remove('show-preloader');
-    // let maszynaQuote = setInterval(writeQuote, 20)
-});
+//     preload.classList.remove('show-preloader');
+//     // let maszynaQuote = setInterval(writeQuote, 20)
+// });
 
 //burger
-// const burgerIcons = document.querySelectorAll('.burgerFas');
+const burgerIcons = document.querySelectorAll('.burgerFas');
 const burgerNavi = document.querySelectorAll('nav ul li a');
 const burg = document.querySelector('.plate1')
 
@@ -69,7 +69,11 @@ const burger = function () {
 burg.addEventListener('click', burger);
 for (a of burgerNavi) a.addEventListener('click', burger);
 
-
+const vidBtn = document.querySelector('.vid');
+const showNaVID = function () {
+    document.querySelectorAll('.showNav').forEach(n => n.classList.toggle('off'));
+}
+vidBtn.addEventListener('click', showNaVID)
 
 
 //reklama firm [slider]
